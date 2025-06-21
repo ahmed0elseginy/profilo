@@ -25,9 +25,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="floating-gradient">
-            <div className="gradient-circle" />
-          </div>
           <div className="relative z-10 md:px-20 lg:px-20 px-9 overflow-x-hidden">
             {children}
           </div>
