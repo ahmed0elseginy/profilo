@@ -58,7 +58,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <FormField
           control={form.control}
           name="name"
@@ -66,7 +66,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="sr-only">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Your Name" {...field} />
+                <Input placeholder="Name" {...field} className="py-2 bg-secondary text-foreground border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -79,7 +79,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="sr-only">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Your Email" {...field} />
+                <Input placeholder="Email" {...field} className="py-2 bg-secondary text-foreground border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -92,14 +92,18 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="sr-only">Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Your Message" className="min-h-[120px]" {...field} />
+                <Textarea placeholder="Message" rows={6} {...field} className="py-2 bg-secondary text-foreground border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none" />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Send Message"}
+        <Button 
+          type="submit" 
+          className="w-full bg-primary text-primary-foreground hover:bg-transparent hover:text-primary border border-primary transition-all duration-300 rounded-lg" 
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Submitting..." : "Submit"}
         </Button>
       </form>
     </Form>
