@@ -2,25 +2,16 @@ import { ContactForm } from "@/components/contact-form";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="w-full py-12 border-t border-border">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-lg text-primary mb-2 shiny-sec">Let's talk</h2>
-        <h3 className="text-4xl md:text-5xl font-medium text-foreground mb-6">
-          Contact
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="text-muted-foreground">
-            <p className="mb-4">
-              Have a question or a project in mind? Feel free to reach out.
-            </p>
-            <div className="flex items-center gap-2">
-              <span>Location:</span>
-              <span className="text-foreground">Tanta, Gharbia, Egypt</span>
-            </div>
-          </div>
-          <div>
+    <section id="contact" className="relative w-full py-20 md:py-32 px-6 lg:px-8 bg-background overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute bottom-0 -left-16 w-48 h-48 bg-primary rounded-full opacity-20 blur-3xl" />
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 shiny-text">Let's Connect</h2>
+        <p className="text-lg text-muted-foreground mb-12">
+          Have a question, a project, or just want to say hi? My inbox is always open.
+        </p>
+        <div className="max-w-xl mx-auto bg-card p-8 rounded-2xl border border-border/20 shadow-lg">
             <ContactForm />
-          </div>
         </div>
       </div>
     </section>

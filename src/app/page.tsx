@@ -8,9 +8,9 @@ import { EducationSection } from "@/components/sections/education";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Header />
-      <main className="flex-grow">
+      <main>
         <HomeSection />
         <ProjectsSection />
         <EducationSection />
@@ -18,6 +18,6 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

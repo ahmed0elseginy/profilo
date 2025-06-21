@@ -16,8 +16,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-montserrat)', 'sans-serif'],
-        headline: ['var(--font-montserrat)', 'sans-serif'],
+        body: ['var(--font-ubuntu)', 'sans-serif'],
+        headline: ['var(--font-ubuntu)', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -76,36 +76,30 @@ export default {
             height: '0',
           },
         },
-        'scroll': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+        'fly-across': {
+          '0%': { transform: 'translateX(-20vw) rotate(-15deg)' },
+          '100%': { transform: 'translateX(120vw) rotate(10deg)' },
+        },
+        'shooting-star': {
+          '0%': { transform: 'translateX(30vw) translateY(-30vh) rotate(20deg)', opacity: '1' },
+          '100%': { transform: 'translateX(-30vw) translateY(30vh) rotate(20deg)', opacity: '0' },
+        },
+         'star-twinkle': {
+            '0%': { 'background-position': '0 0, 10px 10px' },
+            '50%': { 'background-position': '-10px 10px, 5px -5px' },
+            '100%': { 'background-position': '0 0, 10px 10px' },
         },
         'shine': {
           'to': { backgroundPosition: '200% center' },
-        },
-        'shine-sec': {
-          '0%': { backgroundPosition: '100% 50%' },
-          '30%': { backgroundPosition: '0% 50%' },
-          '70%': { backgroundPosition: '0% 50%' },
-        },
-        'float': {
-          '0%, 100%': {
-            transform: 'translateX(-50%) translateY(0) scale(1)',
-            opacity: '0.5',
-          },
-          '50%': {
-            transform: 'translateX(-50%) translateY(-20px) scale(1.05)',
-            opacity: '0.8',
-          },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'scroll': 'scroll 150s linear infinite',
-        'shine': 'shine 3s linear infinite',
-        'shine-sec': 'shine-sec 3s linear infinite',
-        'float': 'float 10s ease-in-out infinite',
+        'fly-across': 'fly-across 25s linear infinite',
+        'shooting-star': 'shooting-star 5s ease-in-out infinite',
+        'star-twinkle': 'star-twinkle 10s linear infinite',
+        'shine': 'shine 4s linear infinite',
       },
     },
   },

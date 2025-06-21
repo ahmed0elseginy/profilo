@@ -1,14 +1,18 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Montserrat } from 'next/font/google';
+import { Ubuntu } from 'next/font/google';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { Toaster } from "@/components/ui/toaster";
 
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' });
+const ubuntu = Ubuntu({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-ubuntu'
+});
 
 export const metadata: Metadata = {
-  title: 'Ahmed Elseginy | Full-Stack Developer',
-  description: 'Portfolio of Ahmed Elseginy, a passionate full-stack developer specializing in creating modern web applications.',
+  title: 'Ahmed Elseginy | Software Developer',
+  description: 'Portfolio of Ahmed Elseginy, a passionate software developer specializing in creating modern web applications.',
 };
 
 export default function RootLayout({
@@ -18,16 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${montserrat.variable} font-body antialiased`}>
+      <body className={`${ubuntu.variable} font-body antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative z-10 md:px-20 lg:px-20 px-9 overflow-x-hidden">
-            {children}
-          </div>
+          {children}
           <Toaster />
         </ThemeProvider>
       </body>

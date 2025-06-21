@@ -58,7 +58,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
         <FormField
           control={form.control}
           name="name"
@@ -66,7 +66,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="sr-only">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Name" {...field} className="py-2 bg-secondary text-foreground border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
+                <Input placeholder="Name" {...field} className="py-3 bg-background text-foreground border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -79,7 +79,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="sr-only">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Email" {...field} className="py-2 bg-secondary text-foreground border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
+                <Input placeholder="Email" {...field} className="py-3 bg-background text-foreground border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -92,7 +92,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="sr-only">Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Message" rows={6} {...field} className="py-2 bg-secondary text-foreground border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none" />
+                <Textarea placeholder="Your message..." rows={6} {...field} className="py-3 bg-background text-foreground border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,10 +100,10 @@ export function ContactForm() {
         />
         <Button 
           type="submit" 
-          className="w-full bg-primary text-primary-foreground hover:bg-transparent hover:text-primary border border-primary transition-all duration-300 rounded-lg" 
+          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 rounded-lg py-3 text-lg font-semibold" 
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Submitting..." : "Submit"}
+          {isSubmitting ? "Sending..." : "Send Message"}
         </Button>
       </form>
     </Form>

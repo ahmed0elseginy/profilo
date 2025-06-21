@@ -1,67 +1,60 @@
-import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { FolderGit2 } from "lucide-react";
 
 const projects = [
-  {
-    title: "YouTube Trending EDA",
-    description: "Exploratory Data Analysis on trending YouTube videos across countries.",
-    image: "https://placehold.co/600x400.png",
-    hint: "youtube analytics dashboard",
-    tags: ["Python", "Pandas", "Matplotlib"],
-    githubUrl: "https://github.com/mahmoud375/YouTube-Trending-EDA.git",
-  },
-  {
-    title: "Project Management Tool",
-    description: "A collaborative platform for teams to manage tasks, track progress, and communicate effectively.",
-    image: "https://placehold.co/600x400.png",
-    hint: "dashboard interface",
-    tags: ["React", "Firebase", "Tailwind CSS"],
-    githubUrl: "#",
-  },
-];
+    {
+      title: "Backend – Social Media App",
+      description: "Designed and developed RESTful APIs with Java and Spring Boot, with advanced security and an Event-Driven Architecture.",
+      tags: ["Java", "Spring Boot", "Spring Security", "ActiveMQ", "MySQL", "Swagger"],
+      githubUrl: "#", 
+    },
+    {
+      title: "Simple E-commerce Platform",
+      description: "Built CRUD functionalities using Spring Boot, MySQL, and Thymeleaf for a dynamic web interface.",
+      tags: ["Spring Boot", "MySQL", "Thymeleaf"],
+      githubUrl: "#",
+    },
+    {
+      title: "User-Management-Backend",
+      description: "Developed full CRUD RESTful endpoints with a layered architecture and Liquibase for schema evolution.",
+      tags: ["Java", "REST", "OpenAPI", "Liquibase"],
+      githubUrl: "#",
+    },
+    {
+      title: "To-Do-List-Backend",
+      description: "Implemented essential CRUD operations with a focus on maintainability, clean architecture, and modular code.",
+      tags: ["Java", "CRUD", "Clean Architecture"],
+      githubUrl: "#",
+    },
+  ];
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-12 border-t border-border text-foreground">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-lg text-primary mb-2 shiny-sec">My work</h2>
-        <h3 className="text-4xl md:text-5xl font-medium mb-8">Projects</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section id="projects" className="relative py-20 md:py-32 px-6 lg:px-8 bg-background">
+      {/* Decorative elements */}
+      <div className="absolute top-1/4 -left-16 w-32 h-32 bg-secondary rounded-full opacity-30 blur-2xl" />
+      <div className="absolute bottom-1/4 -right-16 w-32 h-32 bg-primary rounded-full opacity-20 blur-2xl" />
+
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 shiny-text">Projects</h2>
+        <p className="text-lg text-muted-foreground mb-12">A glimpse into my universe of code.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           {projects.map((project) => (
-            <div key={project.title} className="group">
-              <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    data-ai-hint={project.hint}
-                    width={600}
-                    height={400}
-                    className="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="flex items-center px-3">
-                  <div className="flex-grow">
-                    <h4 className="text-2xl font-semibold">{project.title}</h4>
-                    <span className="py-1 text-sm text-muted-foreground">{project.description}</span>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                        {project.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary">{tag}</Badge>
-                        ))}
-                    </div>
+            <Link key={project.title} href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="block group bg-card p-6 rounded-2xl border border-transparent hover:border-primary transition-all duration-300 shadow-lg hover:shadow-primary/20">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shrink-0">
+                    <FolderGit2 className="w-6 h-6 text-secondary-foreground" />
                   </div>
-                  <div className="flex gap-2 ml-auto">
-                    <div className="size-14 flex justify-center items-center text-muted-foreground group-hover:text-foreground transition duration-300 ease-in-out border border-border p-3 rounded-xl bg-secondary/50 group-hover:bg-accent">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-7">
-                        <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z"></path>
-                      </svg>
-                    </div>
-                  </div>
+                  <h4 className="text-2xl font-semibold text-foreground">{project.title}</h4>
                 </div>
-              </Link>
-            </div>
+                <p className="text-sm text-muted-foreground mb-4 min-h-[40px]">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary">{tag}</Badge>
+                    ))}
+                </div>
+            </Link>
           ))}
         </div>
       </div>

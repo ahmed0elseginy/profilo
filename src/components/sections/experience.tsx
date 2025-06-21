@@ -1,3 +1,5 @@
+import { Briefcase } from "lucide-react";
+
 const experiences = [
   {
     date: "Sep 2024 - Mar 2025",
@@ -33,43 +35,44 @@ const experiences = [
 ];
 
 export function ExperienceSection() {
-  return (
-    <section id="experience" className="w-full py-12 border-t border-border">
-      <div className="max-w-5xl mx-auto">
-        <h3 className="text-4xl md:text-5xl font-medium text-center mb-12">
-          Work Experience
-        </h3>
-        <div className="relative md:pl-6">
-          {/* Vertical line for desktop */}
-          <div className="absolute left-6 top-2 h-full w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={index} className="md:pl-10 relative">
-                {/* Circle with number for desktop */}
-                <div className="absolute -left-1 top-1 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary border-4 border-background">
-                  <span className="text-xl font-semibold text-primary-foreground">
-                    {experiences.length - index}
-                  </span>
+    return (
+      <section id="experience" className="relative w-full py-20 md:py-28 px-6 lg:px-8 bg-background">
+          {/* Decorative elements */}
+          <div className="absolute top-1/2 right-0 w-64 h-64 bg-secondary rounded-full opacity-10 blur-3xl -translate-y-1/2" />
+  
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-4xl md:text-5xl font-bold text-center mb-12 shiny-text">
+            Work Experience
+          </h3>
+          <div className="relative md:pl-6">
+            {/* Vertical line for desktop */}
+            <div className="absolute left-6 top-2 h-full w-0.5 bg-border -translate-x-1/2 hidden md:block rounded-full"></div>
+  
+            <div className="space-y-12">
+              {experiences.map((exp, index) => (
+                <div key={index} className="md:pl-10 relative">
+                  {/* Circle with icon for desktop */}
+                  <div className="absolute -left-1 top-1 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary border-4 border-background shadow-lg">
+                    <Briefcase className="text-primary-foreground" />
+                  </div>
+  
+                  <div className="md:ml-4 p-6 bg-card rounded-2xl border border-transparent hover:border-primary/50 transition-all">
+                    <p className="text-sm text-muted-foreground">{exp.date}</p>
+                    <h4 className="text-2xl font-semibold mt-1 text-foreground">{exp.title}</h4>
+                    <p className="text-lg text-muted-foreground mt-1">
+                      {exp.company}
+                    </p>
+                    <ul className="mt-4 space-y-2 list-disc pl-5 text-muted-foreground">
+                      {exp.description.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-
-                <div className="md:ml-4">
-                  <p className="text-sm text-muted-foreground">{exp.date}</p>
-                  <h4 className="text-2xl font-semibold mt-1">{exp.title}</h4>
-                  <p className="text-lg text-muted-foreground mt-1">
-                    {exp.company}
-                  </p>
-                  <ul className="mt-4 space-y-2 list-disc pl-5 text-muted-foreground">
-                    {exp.description.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
+    );
+  }

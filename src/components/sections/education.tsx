@@ -23,26 +23,26 @@ const education = [
 
 export function EducationSection() {
   return (
-    <section id="education" className="w-full py-12 border-t border-border">
+    <section id="education" className="relative w-full py-20 md:py-28 px-6 lg:px-8 bg-background">
       <div className="max-w-5xl mx-auto">
-        <h3 className="text-4xl md:text-5xl font-medium text-center mb-12">
+        <h3 className="text-4xl md:text-5xl font-bold text-center mb-12 shiny-text">
           Education
         </h3>
         <div className="relative md:pl-6">
           {/* Vertical line for desktop */}
-          <div className="absolute left-6 top-2 h-full w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
+          <div className="absolute left-6 top-2 h-full w-0.5 bg-border -translate-x-1/2 hidden md:block rounded-full"></div>
 
           <div className="space-y-12">
             {education.map((edu, index) => (
               <div key={index} className="md:pl-10 relative">
                 {/* Circle with icon for desktop */}
-                <div className="absolute -left-1 top-1 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary border-4 border-background">
+                <div className="absolute -left-1 top-1 hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary border-4 border-background shadow-lg">
                   <GraduationCap className="text-primary-foreground" />
                 </div>
 
-                <div className="md:ml-4">
+                <div className="md:ml-4 p-6 bg-card rounded-2xl border border-transparent hover:border-primary/50 transition-all">
                   <p className="text-sm text-muted-foreground">{edu.date}</p>
-                  <h4 className="text-2xl font-semibold mt-1">{edu.title}</h4>
+                  <h4 className="text-2xl font-semibold mt-1 text-foreground">{edu.title}</h4>
                   <p className="text-lg text-muted-foreground mt-1">
                     {edu.institution}
                   </p>
