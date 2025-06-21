@@ -21,7 +21,8 @@ export default function RootLayout({
       <body className={`${montserrat.variable} font-body antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
+          enableSystem
           disableTransitionOnChange
         >
           <div className="floating-gradient">

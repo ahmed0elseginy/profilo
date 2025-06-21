@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 
 export function Header() {
   const navLinks = [
@@ -36,7 +37,7 @@ export function Header() {
     <div className="flex justify-center w-full">
       <nav className="fixed flex left-0 right-0 z-[100] bg-secondary/70 border border-border backdrop-blur-xl transition-all md:top-0 md:bottom-auto bottom-0 md:w-[45rem] rounded-t-2xl md:rounded-full md:mt-6 md:justify-self-center">
         <div className="container mx-auto flex justify-center items-center p-3">
-          <ul className="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6">
+          <ul className="flex w-full justify-between items-center md:space-x-6 md:justify-center md:gap-12 gap-6">
             {navLinks.map((link) => (
               <li key={link.href} className="flex-1 md:flex-none">
                 <Link
@@ -51,6 +52,9 @@ export function Header() {
                 </Link>
               </li>
             ))}
+             <li className="flex-1 md:flex-none flex justify-center">
+              <ThemeToggle />
+            </li>
           </ul>
         </div>
       </nav>
