@@ -1,15 +1,25 @@
 {
-  "name": "nextn",
-  "version": "0.1.0",
+  "name": "ahmed-elseginy-portfolio",
+  "version": "2.0.0",
   "private": true,
+  "description": "Modern portfolio website for Ahmed El-Seginy - Software Developer",
+  "author": "Ahmed El-Seginy <ahmed0elseginy@gmail.com>",
+  "keywords": ["portfolio", "react", "nextjs", "typescript", "developer"],
   "scripts": {
     "dev": "next dev -p 9002",
-    "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
-    "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
     "build": "next build",
+    "build:analyze": "ANALYZE=true next build",
     "start": "next start",
+    "preview": "next build && next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "lint:fix": "next lint --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "rm -rf .next out dist",
+    "test:build": "npm run typecheck && npm run lint && npm run build",
+    "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
+    "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.2.0",
@@ -56,12 +66,30 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^15.3.4",
     "@types/node": "^20",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "genkit-cli": "^1.2.0",
     "postcss": "^8",
+    "prettier": "^3.0.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }
