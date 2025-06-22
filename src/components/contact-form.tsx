@@ -66,7 +66,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="sr-only">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Name" {...field} className="py-3 bg-background text-foreground border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
+                <Input 
+                  placeholder="What shall I call you? ⭐" 
+                  {...field} 
+                  className="py-4 px-4 bg-slate-900/50 text-white border-2 border-yellow-400/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/60 placeholder:text-gray-400 placeholder:italic transition-all duration-300 hover:border-yellow-400/50" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -79,7 +83,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="sr-only">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Email" {...field} className="py-3 bg-background text-foreground border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" />
+                <Input 
+                  placeholder="Your star address (email) 🌟" 
+                  {...field} 
+                  className="py-4 px-4 bg-slate-900/50 text-white border-2 border-yellow-400/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/60 placeholder:text-gray-400 placeholder:italic transition-all duration-300 hover:border-yellow-400/50" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -92,7 +100,12 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="sr-only">Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Your message..." rows={6} {...field} className="py-3 bg-background text-foreground border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none" />
+                <Textarea 
+                  placeholder="Share your story... What brings you to my corner of the universe? Whether it's a project idea, collaboration, or just to say hello - I'd love to hear from you! ✨" 
+                  rows={6} 
+                  {...field} 
+                  className="py-4 px-4 bg-slate-900/50 text-white border-2 border-yellow-400/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/60 resize-none placeholder:text-gray-400 placeholder:italic transition-all duration-300 hover:border-yellow-400/50" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,10 +113,23 @@ export function ContactForm() {
         />
         <Button 
           type="submit" 
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 rounded-lg py-3 text-lg font-semibold" 
+          className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-900 hover:from-yellow-300 hover:to-amber-400 transition-all duration-300 rounded-xl py-4 text-lg font-bold shadow-lg hover:shadow-xl hover:scale-105 transform border-2 border-yellow-400/50 hover:border-yellow-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" 
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
+          {isSubmitting ? (
+            <span className="flex items-center justify-center gap-2">
+              <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+              </svg>
+              Sending across the stars...
+            </span>
+          ) : (
+            <span className="flex items-center justify-center gap-2">
+              Launch Message 
+              <span className="text-xl">🚀</span>
+            </span>
+          )}
         </Button>
       </form>
     </Form>
