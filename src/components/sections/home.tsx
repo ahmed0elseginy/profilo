@@ -112,7 +112,7 @@ export function HomeSection() {
         >
           <Rocket className="w-5 h-5 md:w-6 md:h-6 text-yellow-400" />
           <p className="text-base md:text-lg lg:text-2xl story-text">
-            Backend Developer & Code Explorer
+            Software Engineer 
           </p>
         </motion.div>
 

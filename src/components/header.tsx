@@ -51,7 +51,7 @@ export function Header() {
           href="#home" 
           className="text-lg sm:text-xl font-bold text-yellow-400 shiny-text flex-shrink-0"
         >
-          Le Petit Prince
+          Ahmed El-Seginy
         </Link>
         
         {/* Desktop Navigation */}
