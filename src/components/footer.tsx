@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, Code } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -12,28 +12,28 @@ export function Footer() {
       href: "https://github.com/ahmed-elseginy",
       label: "GitHub",
       icon: Github,
-      color: "hover:text-white"
+      color: "hover:text-primary"
     },
     {
       href: "https://linkedin.com/in/ahmed-elseginy",
       label: "LinkedIn", 
       icon: Linkedin,
-      color: "hover:text-blue-400"
+      color: "hover:text-secondary"
     },
     {
-      href: "mailto:ahmed.elseginy@gmail.com",
+      href: "mailto:ahmed0elseginy@gmail.com",
       label: "Email",
       icon: Mail,
-      color: "hover:text-yellow-400"
+      color: "hover:text-primary"
     }
   ];
 
   return (
-    <footer className="relative w-full py-8 md:py-12 px-4 md:px-6 lg:px-8 bg-slate-900/50 backdrop-blur-sm border-t border-yellow-400/20">
+    <footer className="relative w-full py-8 md:py-12 px-4 md:px-6 lg:px-8 bg-black/50 backdrop-blur-sm border-t border-primary/20">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
       
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
           
           {/* Left section - Name and title */}
@@ -44,11 +44,16 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl md:text-2xl font-bold text-white">
-              Ahmed El-Seginy
-            </h3>
-            <p className="text-sm md:text-base text-gray-400 mt-1">
-              Software Developer from Giza, Egypt
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Code className="w-4 h-4 text-primary" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-white">
+                Ahmed El-Seginy
+              </h3>
+            </div>
+            <p className="text-sm md:text-base text-gray-400">
+              Java Backend Developer • Cairo, Egypt
             </p>
           </motion.div>
 
@@ -76,15 +81,10 @@ export function Footer() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-2 text-gray-400 ${social.color} transition-all duration-300 rounded-lg hover:bg-yellow-400/10 group`}
+                      className={`w-12 h-12 inline-flex items-center justify-center border border-gray-600 rounded-full text-gray-400 ${social.color} transition-all duration-300 hover:scale-110`}
                       aria-label={social.label}
                     >
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Icon className="w-5 h-5 md:w-6 md:h-6" />
-                      </motion.div>
+                      <Icon className="w-5 h-5" />
                     </Link>
                   </motion.div>
                 );
@@ -94,9 +94,9 @@ export function Footer() {
             {/* Copyright */}
             <div className="text-center md:text-right text-xs md:text-sm text-gray-500">
               <p className="flex items-center justify-center md:justify-end gap-1 flex-wrap">
-                © {currentYear} Ahmed El-Seginy. Made with 
-                <Heart className="w-3 h-3 md:w-4 md:h-4 text-red-400 fill-current mx-1" />
-                All Rights Reserved.
+                © {currentYear} Ahmed El-Seginy. Built with 
+                <Heart className="w-3 h-3 md:w-4 md:h-4 text-primary fill-current mx-1" />
+                and modern technologies.
               </p>
             </div>
           </motion.div>
@@ -104,7 +104,7 @@ export function Footer() {
 
         {/* Bottom decoration line */}
         <motion.div 
-          className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-yellow-400/10"
+          className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-primary/10"
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -112,7 +112,7 @@ export function Footer() {
         >
           <div className="text-center">
             <p className="text-xs text-gray-600 italic">
-              "One sees clearly only with the heart. What is essential is invisible to the eye." - The Little Prince
+              "Code is like humor. When you have to explain it, it's bad." - Cory House
             </p>
           </div>
         </motion.div>

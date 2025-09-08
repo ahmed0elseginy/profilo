@@ -3,23 +3,25 @@
 import { ContactForm } from "@/components/contact-form";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Heart, Star } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export function ContactSection() {
   const contactInfo = [
     {
-      icon: <Mail className="w-6 h-6" />,
+      icon: Mail,
       label: "Email",
       value: "ahmed0elseginy@gmail.com",
       href: "mailto:ahmed0elseginy@gmail.com"
     },
     {
-      icon: <Phone className="w-6 h-6" />,
+      icon: Phone,
       label: "Phone",
       value: "(+02) 01000 432 923",
       href: "tel:+201000432923"
     },
     {
-      icon: <MapPin className="w-6 h-6" />,
+      icon: MapPin,
       label: "Location",
       value: "Cairo, Egypt",
       href: "#"
@@ -27,142 +29,141 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="relative w-full py-20 md:py-32 px-6 lg:px-8 bg-background overflow-hidden section-wave-divider">
-      {/* Background planets, clouds, and stars removed */}
-
+    <section id="contact" className="py-16 md:py-24 px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 shiny-text">
-            Let's Begin a New Chapter
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Get In Touch
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            "One sees clearly only with the heart. What is essential is invisible to the eye."<br/>
-            Like the Little Prince, I believe in meaningful connections. Reach out and let's create something wonderful together.
+          <div className="w-16 h-px bg-gradient-to-r from-primary to-transparent mx-auto mb-6"></div>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Ready to collaborate on your next project? Let's connect and discuss 
+            how we can work together to bring your ideas to life.
           </p>
-          
-          {/* Quote from Little Prince */}
-          <motion.div
-            className="flex items-center justify-center gap-2 text-yellow-400"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Heart className="w-5 h-5" />
-            <span className="italic">Ready to tame a new friendship?</span>
-            <Heart className="w-5 h-5" />
-          </motion.div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div className="relative border border-slate-700 rounded-lg p-8 bg-slate-900/30">
-
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <Star className="w-6 h-6 text-yellow-400" />
-                Find Me in the Universe
-              </h3>
+            <Card className="bg-black/50 border-primary/20 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold text-white flex items-center gap-3">
+                  <Star className="w-5 h-5 text-primary" />
+                  Contact Information
+                </CardTitle>
+                <CardDescription className="text-gray-400">
+                  Reach out through any of these channels
+                </CardDescription>
+              </CardHeader>
               
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-slate-700/30 border border-yellow-400/10 hover:border-yellow-400/30 hover:bg-slate-700/50 transition-all duration-300 group"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-slate-900 group-hover:scale-110 transition-transform shadow-lg">
-                      {info.icon}
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-gray-400 font-medium">{info.label}</p>
-                      <a 
-                        href={info.href}
-                        className="text-white hover:text-yellow-400 transition-colors font-medium"
-                      >
-                        {info.value}
-                      </a>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+              <CardContent className="space-y-4">
+                {contactInfo.map((info, index) => {
+                  const Icon = info.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      className="flex items-center gap-4 p-4 rounded-lg bg-black/30 border border-primary/10 hover:border-primary/30 hover:bg-black/50 transition-all duration-300 group"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.5 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.02 }}
+                    >
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm text-gray-400 font-medium">{info.label}</p>
+                        <a 
+                          href={info.href}
+                          className="text-white hover:text-primary transition-colors font-medium"
+                        >
+                          {info.value}
+                        </a>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </CardContent>
+            </Card>
 
-            {/* Inspirational quote */}
-            <motion.div
-              className="relative border border-slate-700 rounded-lg p-6 bg-slate-900/30"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              {/* Decorative glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/5 to-amber-400/5 rounded-2xl"></div>
-              <blockquote className="relative text-center">
-                <p className="text-gray-300 italic mb-4">
-                  "If you tame me, then we shall need each other. To me, you will be unique in all the world. To you, I shall be unique in all the world."
-                </p>
-                <footer className="text-sm text-yellow-400 font-medium">— The Little Prince</footer>
-              </blockquote>
-            </motion.div>
+            {/* Call to Action */}
+            <Card className="bg-black/50 border-primary/20 backdrop-blur-sm">
+              <CardContent className="p-6">
+                <div className="text-center space-y-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
+                    <Heart className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">Let's Connect</h3>
+                  <p className="text-gray-400 text-sm">
+                    I'm always excited to discuss new opportunities and collaborate on interesting projects.
+                  </p>
+                  <Button 
+                    variant="outline" 
+                    className="bg-black/30 border-primary/20 text-gray-300 hover:bg-primary/10 hover:border-primary/40 hover:text-white transition-all duration-300"
+                    asChild
+                  >
+                    <a href="mailto:ahmed0elseginy@gmail.com">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Send Email
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative border border-slate-700 rounded-lg p-8 bg-slate-900/30">
-
-              <div className="relative mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-3">
-                  <Send className="w-6 h-6 text-yellow-400" />
+            <Card className="bg-black/50 border-primary/20 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold text-white flex items-center gap-3">
+                  <Send className="w-5 h-5 text-primary" />
                   Send a Message
-                </h3>
-                <p className="text-gray-300">
-                  Every great journey begins with a simple hello. What's yours?
-                </p>
-              </div>
+                </CardTitle>
+                <CardDescription className="text-gray-400">
+                  Fill out the form below and I'll get back to you as soon as possible
+                </CardDescription>
+              </CardHeader>
               
-              <div className="relative">
-              <ContactForm />
-              </div>
-            </div>
+              <CardContent>
+                <ContactForm />
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
 
-        {/* Final quote */}
+        {/* Final Message */}
         <motion.div 
-          className="text-center mt-16 pt-8 border-t border-yellow-400/20"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mt-12 pt-8 border-t border-primary/20"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-300 text-lg italic max-w-2xl mx-auto">
-            "And now here is my secret, a very simple secret: It is only with the heart that one can see rightly; what is essential is invisible to the eye."
+          <p className="text-gray-400 text-lg italic max-w-2xl mx-auto mb-4">
+            "Great things in business are never done by one person. They're done by a team of people."
           </p>
-          <p className="text-yellow-400 mt-4 font-medium">
-            Let's build something meaningful together ✨
+          <p className="text-primary font-medium">
+            Let's build something amazing together ✨
           </p>
         </motion.div>
       </div>

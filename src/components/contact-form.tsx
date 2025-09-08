@@ -64,15 +64,15 @@ export function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="sr-only">Name</FormLabel>
+              <FormLabel className="text-sm font-medium text-gray-300">Name</FormLabel>
               <FormControl>
                 <Input 
-                  placeholder="What shall I call you? ⭐" 
+                  placeholder="Enter your name" 
                   {...field} 
-                  className="py-4 px-4 bg-slate-900/50 text-white border-2 border-yellow-400/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/60 placeholder:text-gray-400 placeholder:italic transition-all duration-300 hover:border-yellow-400/50" 
+                  className="bg-black/30 border-primary/20 text-white placeholder:text-gray-400 focus:border-primary/40 focus:ring-primary/20 transition-all duration-300" 
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-xs text-red-400" />
             </FormItem>
           )}
         />
@@ -81,15 +81,16 @@ export function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="sr-only">Email</FormLabel>
+              <FormLabel className="text-sm font-medium text-gray-300">Email</FormLabel>
               <FormControl>
                 <Input 
-                  placeholder="Your star address (email) 🌟" 
+                  type="email"
+                  placeholder="Enter your email address" 
                   {...field} 
-                  className="py-4 px-4 bg-slate-900/50 text-white border-2 border-yellow-400/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/60 placeholder:text-gray-400 placeholder:italic transition-all duration-300 hover:border-yellow-400/50" 
+                  className="bg-black/30 border-primary/20 text-white placeholder:text-gray-400 focus:border-primary/40 focus:ring-primary/20 transition-all duration-300" 
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-xs text-red-400" />
             </FormItem>
           )}
         />
@@ -98,37 +99,34 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="sr-only">Message</FormLabel>
+              <FormLabel className="text-sm font-medium text-gray-300">Message</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="Share your story... What brings you to my corner of the universe? Whether it's a project idea, collaboration, or just to say hello - I'd love to hear from you! ✨" 
+                  placeholder="Tell me about your project or how I can help you..." 
                   rows={6} 
                   {...field} 
-                  className="py-4 px-4 bg-slate-900/50 text-white border-2 border-yellow-400/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/60 resize-none placeholder:text-gray-400 placeholder:italic transition-all duration-300 hover:border-yellow-400/50" 
+                  className="bg-black/30 border-primary/20 text-white placeholder:text-gray-400 focus:border-primary/40 focus:ring-primary/20 resize-none transition-all duration-300" 
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-xs text-red-400" />
             </FormItem>
           )}
         />
         <Button 
           type="submit" 
-          className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-900 hover:from-yellow-300 hover:to-amber-400 transition-all duration-300 rounded-xl py-4 text-lg font-bold shadow-lg hover:shadow-xl hover:scale-105 transform border-2 border-yellow-400/50 hover:border-yellow-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" 
+          className="w-full bg-secondary text-white hover:bg-secondary/90 transition-all duration-300 font-medium disabled:opacity-50 disabled:cursor-not-allowed" 
           disabled={isSubmitting}
         >
           {isSubmitting ? (
             <span className="flex items-center justify-center gap-2">
-              <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
               </svg>
-              Sending across the stars...
+              Sending Message...
             </span>
           ) : (
-            <span className="flex items-center justify-center gap-2">
-              Launch Message 
-              <span className="text-xl">🚀</span>
-            </span>
+            "Send Message"
           )}
         </Button>
       </form>
