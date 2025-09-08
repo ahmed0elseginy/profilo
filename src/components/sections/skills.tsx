@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Grouped skills for the Full Tech Stack section
 const frontendSkills = [
@@ -65,75 +66,114 @@ export function SkillsSection() {
           <div className="w-16 h-px bg-gradient-to-r from-primary to-transparent mx-auto mb-6"></div>
         </motion.div>
 
-        {/* Full Tech Stack (grouped tiles) */}
-        <div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div className="space-y-10">
-              {/* Frontend */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-4 text-primary">Frontend</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {frontendSkills.map((tech) => (
-                    <div key={tech.name} className="rounded-xl border border-primary/20 bg-black/30 p-4 flex flex-col items-center gap-2 hover:border-primary/40 transition-colors">
-                      <div className="relative w-9 h-9">
-                        <Image src={tech.icon} alt={`${tech.name} icon`} fill sizes="36px" className="object-contain" />
-                      </div>
-                      <span className="text-sm text-gray-300">{tech.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+        {/* Skills Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <Tabs defaultValue="frontend" className="w-full">
+            <TabsList className="grid w-full grid-cols-4 bg-black/50 border border-primary/20 mb-8">
+              <TabsTrigger 
+                value="frontend" 
+                className="data-[state=active]:bg-primary data-[state=active]:text-black data-[state=active]:shadow-lg transition-all duration-300"
+              >
+                Frontend
+              </TabsTrigger>
+              <TabsTrigger 
+                value="backend"
+                className="data-[state=active]:bg-primary data-[state=active]:text-black data-[state=active]:shadow-lg transition-all duration-300"
+              >
+                Backend
+              </TabsTrigger>
+              <TabsTrigger 
+                value="tools"
+                className="data-[state=active]:bg-primary data-[state=active]:text-black data-[state=active]:shadow-lg transition-all duration-300"
+              >
+                Tools
+              </TabsTrigger>
+              <TabsTrigger 
+                value="devops"
+                className="data-[state=active]:bg-primary data-[state=active]:text-black data-[state=active]:shadow-lg transition-all duration-300"
+              >
+                Cloud & DevOps
+              </TabsTrigger>
+            </TabsList>
 
-              {/* Backend */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-4 text-primary">Backend</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {backendSkills.map((tech) => (
-                    <div key={tech.name} className="rounded-xl border border-primary/20 bg-black/30 p-4 flex flex-col items-center gap-2 hover:border-primary/40 transition-colors">
-                      <div className="relative w-9 h-9">
-                        <Image src={tech.icon} alt={`${tech.name} icon`} fill sizes="36px" className="object-contain" />
-                      </div>
-                      <span className="text-sm text-gray-300 text-center">{tech.name}</span>
+            <TabsContent value="frontend" className="mt-0">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {frontendSkills.map((tech) => (
+                  <motion.div 
+                    key={tech.name} 
+                    className="rounded-xl border border-primary/20 bg-black/30 p-4 flex flex-col items-center gap-2 hover:border-primary/40 hover:bg-black/50 transition-all duration-300 group"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-300">
+                      <Image src={tech.icon} alt={`${tech.name} icon`} fill sizes="40px" className="object-contain" />
                     </div>
-                  ))}
-                </div>
+                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors duration-300">{tech.name}</span>
+                  </motion.div>
+                ))}
               </div>
+            </TabsContent>
 
-              {/* Tools */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-4 text-primary">Tools</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {toolsSkills.map((tech) => (
-                    <div key={tech.name} className="rounded-xl border border-primary/20 bg-black/30 p-4 flex flex-col items-center gap-2 hover:border-primary/40 transition-colors">
-                      <div className="relative w-9 h-9">
-                        <Image src={tech.icon} alt={`${tech.name} icon`} fill sizes="36px" className="object-contain" />
-                      </div>
-                      <span className="text-sm text-gray-300">{tech.name}</span>
+            <TabsContent value="backend" className="mt-0">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {backendSkills.map((tech) => (
+                  <motion.div 
+                    key={tech.name} 
+                    className="rounded-xl border border-primary/20 bg-black/30 p-4 flex flex-col items-center gap-2 hover:border-primary/40 hover:bg-black/50 transition-all duration-300 group"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-300">
+                      <Image src={tech.icon} alt={`${tech.name} icon`} fill sizes="40px" className="object-contain" />
                     </div>
-                  ))}
-                </div>
+                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors duration-300 text-center">{tech.name}</span>
+                  </motion.div>
+                ))}
               </div>
+            </TabsContent>
 
-              {/* Cloud & DevOps */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-4 text-primary">Cloud & DevOps</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {cloudDevOpsSkills.map((tech) => (
-                    <div key={tech.name} className="rounded-xl border border-primary/20 bg-black/30 p-4 flex flex-col items-center gap-2 hover:border-primary/40 transition-colors">
-                      <div className="relative w-9 h-9">
-                        <Image src={tech.icon} alt={`${tech.name} icon`} fill sizes="36px" className="object-contain" />
-                      </div>
-                      <span className="text-sm text-gray-300 text-center">{tech.name}</span>
+            <TabsContent value="tools" className="mt-0">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {toolsSkills.map((tech) => (
+                  <motion.div 
+                    key={tech.name} 
+                    className="rounded-xl border border-primary/20 bg-black/30 p-4 flex flex-col items-center gap-2 hover:border-primary/40 hover:bg-black/50 transition-all duration-300 group"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-300">
+                      <Image src={tech.icon} alt={`${tech.name} icon`} fill sizes="40px" className="object-contain" />
                     </div>
-                  ))}
-                </div>
+                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors duration-300">{tech.name}</span>
+                  </motion.div>
+                ))}
               </div>
-            </div>
-            <div>
-              {/* Empty space or can add content here later */}
-            </div>
-          </div>
-        </div>
+            </TabsContent>
+
+            <TabsContent value="devops" className="mt-0">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {cloudDevOpsSkills.map((tech) => (
+                  <motion.div 
+                    key={tech.name} 
+                    className="rounded-xl border border-primary/20 bg-black/30 p-4 flex flex-col items-center gap-2 hover:border-primary/40 hover:bg-black/50 transition-all duration-300 group"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-300">
+                      <Image src={tech.icon} alt={`${tech.name} icon`} fill sizes="40px" className="object-contain" />
+                    </div>
+                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors duration-300 text-center">{tech.name}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+        </motion.div>
       </div>
     </section>
   );
