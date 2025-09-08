@@ -5,35 +5,36 @@ import { motion } from "framer-motion";
 
 const education = [
   {
-    date: "Nov 2024 - Jun 2028",
-    status: "Present Journey",
-    title: "Bachelor in Information and Communications Technology (ICT)",
+    date: "Nov 2024 - Present",
+    status: "Current Journey",
+    title: "B.S.E. in Information and Communications Technology (ICT)",
     institution: "New Cairo Technological University (NCTU)",
-    subtitle: "The University Planet",
-    story: "Here I am currently exploring the vast universe of technology, learning new constellations of knowledge each day.",
+    subtitle: "Faculty of Industrial and Energy Technology",
+    story: "Here I am currently exploring the vast universe of technology, learning new constellations of knowledge each day while building modern software solutions.",
     description: [
-      "Leading the Google Developer Groups Club, bringing together fellow explorers of code",
-      "Competed in Be Al-Masry Tech Hackathon 2024, where ideas collide like meteors",
+      "Advanced coursework in software engineering and system design",
+      "Hands-on projects in modern development frameworks and methodologies",
+      "Focus on scalable system architecture and enterprise solutions",
     ],
     icon: <GraduationCap className="w-6 h-6" />,
     color: "from-blue-500 to-indigo-600",
-    achievements: ["Club Organizer", "Hackathon Participant"]
+    achievements: ["ICT Student", "Software Engineering", "System Design"]
   },
   {
     date: "Oct 2020 - Jun 2024",
     status: "Completed",
-    title: "High School Diploma, Computer Programming",
+    title: "High School Diploma, Computer Programming (Grade: 95.67%)",
     institution: "Misr International Computer & AI Academy | MICA",
     subtitle: "The Academy of First Steps",
-    story: "This was where my journey began - a small planet where I first learned to speak the language of machines.",
+    story: "This was where my journey began - a small planet where I first learned to speak the language of machines and discovered my passion for Java development.",
     description: [
-      "Mastered Java programming like learning to tend to digital roses",
-      "Explored Oracle Database realms and Arduino landscapes",
-      "Participated in coding competitions, each one a new adventure",
+      "Mastered Java programming fundamentals with distinction",
+      "Explored Oracle Database development and PL/SQL programming", 
+      "Participated in coding competitions and hackathons",
     ],
     icon: <Code className="w-6 h-6" />,
     color: "from-purple-500 to-pink-600",
-    achievements: ["Java Foundation", "Database Explorer", "Competition Veteran"]
+    achievements: ["Java Foundation", "Oracle Database", "High Distinction"]
   },
 ];
 
@@ -83,109 +84,7 @@ const timelineVariants = {
 export function EducationSection() {
   return (
     <section id="education" className="relative w-full py-20 md:py-32 px-6 lg:px-8 bg-background overflow-hidden section-wave-divider">
-      {/* Academic constellation - Books floating like planets */}
-      <motion.div 
-        className="absolute top-20 right-20 w-16 h-20"
-        animate={{ 
-          rotate: [0, 10, -10, 0],
-          y: [-8, 12, -8]
-        }}
-        transition={{ 
-          rotate: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-          y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-        }}
-      >
-        {/* Floating book */}
-        <div className="w-full h-full bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg opacity-60 shadow-lg transform rotate-12" />
-        <div className="absolute top-1 left-1 w-14 h-2 bg-amber-300/80 rounded-sm" />
-        <div className="absolute top-4 left-1 w-14 h-2 bg-amber-300/60 rounded-sm" />
-      </motion.div>
-      
-      {/* University planet */}
-      <motion.div 
-        className="absolute bottom-28 left-16 w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 opacity-25"
-        animate={{ 
-          rotate: 360,
-          scale: [1, 1.05, 1]
-        }}
-        transition={{ 
-          rotate: { duration: 35, repeat: Infinity, ease: "linear" },
-          scale: { duration: 8, repeat: Infinity, ease: "easeInOut" }
-        }}
-      >
-        {/* University ring */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-6 border-2 border-indigo-300/30 rounded-full rotate-45" />
-      </motion.div>
-      
-      {/* Floating graduation cap */}
-      <motion.div 
-        className="absolute top-1/2 right-12 w-12 h-8"
-        animate={{ 
-          rotate: [0, 5, -5, 0],
-          x: [-5, 10, -5],
-          y: [-3, 7, -3]
-        }}
-        transition={{ 
-          rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-          x: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-          y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-        }}
-      >
-        <div className="w-full h-6 bg-gradient-to-r from-slate-700 to-slate-800 rounded-sm opacity-70" />
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-slate-600 to-slate-700 rounded-full" />
-        <div className="absolute top-2 right-0 w-2 h-6 bg-yellow-400 opacity-80 transform rotate-12" />
-      </motion.div>
-      
-      {/* Knowledge orb */}
-      <motion.div 
-        className="absolute top-1/3 left-8 w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 opacity-20"
-        animate={{ 
-          rotate: -360,
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2]
-        }}
-        transition={{ 
-          rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-          scale: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-          opacity: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-        }}
-      />
-      
-      {/* Animated stars constellation */}
-      <motion.div 
-        className="absolute top-24 left-1/4 w-2 h-2 bg-yellow-400 rounded-full"
-        animate={{ 
-          opacity: [0.4, 1, 0.4],
-          scale: [1, 1.3, 1]
-        }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div 
-        className="absolute top-40 right-1/3 w-3 h-3 bg-yellow-300 rounded-full"
-        animate={{ 
-          opacity: [0.3, 0.8, 0.3],
-          scale: [1, 1.2, 1]
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-      <motion.div 
-        className="absolute bottom-40 left-1/3 w-2 h-2 bg-yellow-500 rounded-full"
-        animate={{ 
-          opacity: [0.5, 1, 0.5],
-          scale: [1, 1.4, 1]
-        }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-      
-      {/* Floating cloud */}
-      <motion.div 
-        className="absolute top-1/3 left-8 w-24 h-12 bg-gradient-to-r from-blue-200/10 to-purple-200/10 rounded-full blur-sm"
-        animate={{ 
-          x: [0, 30, 0],
-          y: [-5, 5, -5]
-        }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-      />
+      {/* Background planets, stars, and clouds removed */}
 
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
@@ -251,16 +150,7 @@ export function EducationSection() {
                   </div>
 
                   {/* Content card */}
-                  <div className="relative bg-slate-800/50 backdrop-blur-sm border border-yellow-400/20 p-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 ml-6 md:ml-0">
-                    {/* Decorative corner elements */}
-                    <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-yellow-400 rounded-tl-lg"></div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 border-r-2 border-t-2 border-yellow-400 rounded-tr-lg"></div>
-                    <div className="absolute -bottom-2 -left-2 w-6 h-6 border-l-2 border-b-2 border-yellow-400 rounded-bl-lg"></div>
-                    <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-yellow-400 rounded-br-lg"></div>
-                    
-                    {/* Inner glow effect */}
-                    <div className="absolute inset-2 bg-gradient-to-br from-yellow-400/5 to-amber-400/10 rounded-xl pointer-events-none"></div>
-                    
+                  <div className="relative border border-slate-700 rounded-lg p-6 bg-slate-900/30 ml-6 md:ml-0">
                     <div className="relative z-10">
                       {/* Header */}
                       <div className="mb-4">

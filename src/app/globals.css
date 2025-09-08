@@ -8,15 +8,19 @@ html {
 
 @layer base {
   :root {
-    /* Cyberpunk Neon Theme */
-    --background: #0a0a0f; /* Deep near-black */
-    --foreground: #e6f7ff; /* Icy white */
-    --card: #0f1020; /* Dark indigo panel */
-    --muted-foreground: #9fb3c8; /* Cool gray-blue */
-    --primary: #00f0ff; /* Neon cyan */
-    --secondary: #ff00ea; /* Neon magenta */
-    --accent: #ffd400; /* Neon amber */
-    --border: #1e2a3a; /* Dark steel */
+    /* Modern Dark Theme */
+    --background: #0a0a0a; /* Pure black */
+    --foreground: #ffffff; /* Pure white */
+    --card: #111111; /* Dark gray */
+    --muted-foreground: #888888; /* Medium gray */
+    --primary: #ff6b35; /* Orange accent */
+    --secondary: #4ecdc4; /* Teal accent */
+    --accent: #45b7d1; /* Blue accent */
+    --border: #333333; /* Dark border */
+    --success: #2ecc71; /* Green */
+    --warning: #f39c12; /* Orange */
+    --error: #e74c3c; /* Red */
+    --info: #3498db; /* Blue */
   }
 }
 
@@ -27,20 +31,21 @@ html {
   body {
     background-color: var(--background);
     color: var(--foreground);
-    /* Grid + scanline + neon haze */
+    /* Modern dark background */
     background-image:
-      linear-gradient(rgba(0, 240, 255, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 0, 234, 0.05) 1px, transparent 1px),
-      radial-gradient(circle at 20% 80%, rgba(0, 240, 255, 0.12) 0%, transparent 40%),
-      radial-gradient(circle at 80% 20%, rgba(255, 0, 234, 0.12) 0%, transparent 40%);
-    background-size: 48px 48px, 48px 48px, 60vw 60vw, 60vw 60vw;
-    background-position: 0 0, 0 0, 0 0, 0 0;
-    animation: scanline 8s linear infinite;
+      radial-gradient(ellipse at 20% 20%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(78, 205, 196, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(69, 183, 209, 0.03) 0%, transparent 70%);
+    background-size: 100vw 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   
   @media (prefers-reduced-motion: reduce) {
     body {
-      animation: none;
+      background-image:
+        radial-gradient(ellipse at 50% 50%, rgba(0, 240, 255, 0.01) 0%, transparent 70%);
     }
   }
 }
@@ -53,7 +58,7 @@ html {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 4s linear infinite;
-    text-shadow: 0 0 8px rgba(0, 240, 255, 0.35), 0 0 16px rgba(255, 0, 234, 0.25);
+    text-shadow: 0 0 8px rgba(255, 107, 53, 0.2), 0 0 16px rgba(78, 205, 196, 0.15);
   }
   
   @media (prefers-reduced-motion: reduce) {
@@ -122,7 +127,7 @@ html {
     height: 1px;
     background: linear-gradient(90deg, 
       transparent 0%, 
-      rgba(0, 240, 255, 0.2) 50%, 
+      rgba(0, 240, 255, 0.1) 50%, 
       transparent 100%);
   }
 
@@ -135,7 +140,7 @@ html {
     height: 1px;
     background: linear-gradient(90deg, 
       transparent 0%, 
-      rgba(255, 0, 234, 0.18) 50%, 
+      rgba(255, 0, 234, 0.1) 50%, 
       transparent 100%);
   }
 
@@ -154,18 +159,12 @@ html {
     position: relative;
   }
 
-  .floating-particles::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.06) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(255, 0, 234, 0.06) 0%, transparent 50%);
-    background-size: 800px 800px, 600px 600px;
-    pointer-events: none;
+  .enhanced-glow {
+    position: relative;
+  }
+
+  .section-glow {
+    position: relative;
   }
 
   .ripple-on-scroll {
@@ -180,7 +179,7 @@ html {
     left: 50%;
     width: 10px;
     height: 10px;
-    background: radial-gradient(circle, rgba(0, 240, 255, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
     animation: ripple-effect 4s ease-out infinite;
@@ -191,15 +190,6 @@ html {
 @keyframes shine {
   to {
     background-position: 200% center;
-  }
-}
-
-@keyframes cosmic-drift {
-  0%, 100% { 
-    background-position: 0 0, 0 0, 0 0; 
-  }
-  50% { 
-    background-position: -30px 30px, 40px -40px, -10px 10px; 
   }
 }
 

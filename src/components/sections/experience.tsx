@@ -5,37 +5,37 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    date: "Sep 2024 - Mar 2025",
+    date: "May 2025 - Present",
     status: "Current",
-    title: "Java with Spring Mentorship",
-    company: "Zag Systems Company",
+    title: "Software Engineer Intern",
+    company: "ZagSystems",
     location: "Remote",
-    story: "Learning scalable systems and secure architectures in the corporate galaxy.",
-    achievements: ["System Architecture", "Security Expert", "Team Collaboration"],
+    story: "Designing and implementing workflow engine modules to support business processes while learning scalable system architecture.",
+    achievements: ["Workflow Engine Development", "CI/CD with Jenkins", "System Architecture"],
+    type: "Internship",
+    icon: <Briefcase className="w-6 h-6" />
+  },
+  {
+    date: "Sep 2024 - Aug 2025",
+    status: "Completed",
+    title: "Java with Spring Mentorship",
+    company: "ZagSystems",
+    location: "Remote",
+    story: "Gained hands-on mentorship in Spring Boot, Microservices, and Event-Driven Architecture while building real-world applications.",
+    achievements: ["Spring Boot Mastery", "RESTful APIs", "Social Media Platform"],
     type: "Mentorship",
     icon: <Rocket className="w-6 h-6" />
   },
   {
-    date: "Jun 2024 - Feb 2025",
-    status: "Self-Learning",
-    title: "Online Courses & Development",
-    company: "The Digital Observatory",
-    location: "Part-time",
-    story: "Building my knowledge library and mastering modern development practices.",
-    achievements: ["Spring Framework", "API Design", "Clean Architecture"],
+    date: "Jun 2024 - Jan 2025",
+    status: "Completed",
+    title: "Spring Boot Bootcamp",
+    company: "Online Learning",
+    location: "Remote",
+    story: "Built sample applications with Spring Boot & MySQL, practicing JWT authentication and modular project structuring.",
+    achievements: ["Spring Boot & MySQL", "JWT Authentication", "Clean Architecture"],
     type: "Education",
     icon: <BookOpen className="w-6 h-6" />
-  },
-  {
-    date: "Oct 2022 - Jun 2024",
-    status: "Foundation",
-    title: "Student Intern",
-    company: "MICA – Misr International Computer & AI",
-    location: "Giza, Egypt",
-    story: "My first steps into programming, competitions, and hands-on development.",
-    achievements: ["Java Foundation", "Hardware Integration", "Problem Solving"],
-    type: "Internship",
-    icon: <School className="w-6 h-6" />
   },
 ];
 
@@ -65,80 +65,7 @@ const itemVariants = {
 export function ExperienceSection() {
   return (
     <section id="experience" className="relative w-full py-20 md:py-32 px-6 lg:px-8 bg-background overflow-hidden section-wave-divider">
-      {/* Floating airplane inspired by Little Prince */}
-      <motion.div 
-        className="absolute top-20 right-12 w-16 h-8"
-        animate={{ 
-          x: [-100, 1400],
-          y: [-5, 5, -5]
-        }}
-        transition={{ 
-          x: { duration: 25, repeat: Infinity, ease: "linear" },
-          y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-        }}
-      >
-        <div className="w-full h-full bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full opacity-60 transform rotate-12" />
-      </motion.div>
-
-      {/* Floating planets */}
-      <motion.div 
-        className="absolute top-32 left-16 w-18 h-18 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 opacity-18"
-        animate={{ 
-          rotate: 360,
-          y: [-8, 12, -8]
-        }}
-        transition={{ 
-          rotate: { duration: 28, repeat: Infinity, ease: "linear" },
-          y: { duration: 7, repeat: Infinity, ease: "easeInOut" }
-        }}
-      />
-      <motion.div 
-        className="absolute bottom-24 right-20 w-14 h-14 rounded-full bg-gradient-to-br from-green-400 to-blue-500 opacity-15"
-        animate={{ 
-          rotate: -360,
-          x: [-10, 10, -10]
-        }}
-        transition={{ 
-          rotate: { duration: 22, repeat: Infinity, ease: "linear" },
-          x: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-        }}
-      />
-      
-      {/* Dreamy cloud */}
-      <motion.div 
-        className="absolute top-1/2 left-4 w-20 h-10 bg-gradient-to-r from-blue-100/8 to-purple-100/8 rounded-full blur-sm"
-        animate={{ 
-          x: [0, 40, 0],
-          opacity: [0.4, 0.8, 0.4]
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-      />
-      
-      {/* Twinkling stars */}
-      <motion.div 
-        className="absolute top-28 right-1/4 w-2 h-2 bg-yellow-400 rounded-full"
-        animate={{ 
-          opacity: [0.3, 1, 0.3],
-          scale: [1, 1.5, 1]
-        }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div 
-        className="absolute bottom-44 left-1/3 w-3 h-3 bg-yellow-300 rounded-full"
-        animate={{ 
-          opacity: [0.4, 0.9, 0.4],
-          scale: [1, 1.3, 1]
-        }}
-        transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-      />
-      <motion.div 
-        className="absolute top-2/3 right-1/5 w-2 h-2 bg-yellow-500 rounded-full"
-        animate={{ 
-          opacity: [0.5, 1, 0.5],
-          scale: [1, 1.4, 1]
-        }}
-        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-      />
+      {/* Background planets, stars, and clouds removed */}
 
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
@@ -194,16 +121,7 @@ export function ExperienceSection() {
                     </div>
 
                     {/* Content card */}
-                    <div className="relative bg-slate-800/50 backdrop-blur-sm border border-yellow-400/20 p-6 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
-                      {/* Decorative corner elements */}
-                      <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-yellow-400 rounded-tl-lg"></div>
-                      <div className="absolute -top-2 -right-2 w-6 h-6 border-r-2 border-t-2 border-yellow-400 rounded-tr-lg"></div>
-                      <div className="absolute -bottom-2 -left-2 w-6 h-6 border-l-2 border-b-2 border-yellow-400 rounded-bl-lg"></div>
-                      <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-yellow-400 rounded-br-lg"></div>
-                      
-                      {/* Inner glow effect */}
-                      <div className="absolute inset-2 bg-gradient-to-br from-yellow-400/5 to-amber-400/10 rounded-xl pointer-events-none"></div>
-                      
+                    <div className="relative border border-slate-700 rounded-lg p-6 bg-slate-900/30">
                       <div className="relative z-10">
                         {/* Header */}
                         <div className="mb-4">

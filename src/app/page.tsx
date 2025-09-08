@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import { HomeSection } from "@/components/sections/home";
-import { TechStackSection } from "@/components/sections/tech-stack";
+import { AboutSection } from "@/components/sections/about";
+import { SkillsSection } from "@/components/sections/skills";
 import { ProjectsSection } from "@/components/sections/projects";
 import { ExperienceSection } from "@/components/sections/experience";
 import { ContactSection } from "@/components/sections/contact";
@@ -13,7 +14,8 @@ export default function Home() {
       <Header />
       <main>
         <HomeSection />
-        <TechStackSection />
+        <AboutSection />
+        <SkillsSection />
         <ProjectsSection />
         <EducationSection />
         <ExperienceSection />

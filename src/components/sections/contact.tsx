@@ -15,82 +15,20 @@ export function ContactSection() {
     {
       icon: <Phone className="w-6 h-6" />,
       label: "Phone",
-      value: "+20 101 407 8842",
-      href: "tel:+201014078842"
+      value: "(+02) 01000 432 923",
+      href: "tel:+201000432923"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       label: "Location",
-      value: "Giza, Egypt",
+      value: "Cairo, Egypt",
       href: "#"
     }
   ];
 
   return (
     <section id="contact" className="relative w-full py-20 md:py-32 px-6 lg:px-8 bg-background overflow-hidden section-wave-divider">
-      {/* Gentle floating rose-inspired elements */}
-      <motion.div 
-        className="absolute top-24 right-16 w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 opacity-12"
-        animate={{ 
-          rotate: 360,
-          y: [-6, 8, -6],
-          scale: [1, 1.05, 1]
-        }}
-        transition={{ 
-          rotate: { duration: 35, repeat: Infinity, ease: "linear" },
-          y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-          scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-        }}
-      />
-      
-      {/* Floating heart-shaped cloud */}
-      <motion.div 
-        className="absolute bottom-32 left-12 w-20 h-12 bg-gradient-to-r from-red-200/8 to-pink-200/8 rounded-full blur-sm"
-        animate={{ 
-          x: [0, 25, 0],
-          opacity: [0.3, 0.7, 0.3]
-        }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-      />
-      
-      {/* Constellation of gentle stars */}
-      <motion.div 
-        className="absolute top-16 right-1/4 w-2 h-2 bg-yellow-400 rounded-full"
-        animate={{ 
-          opacity: [0.4, 1, 0.4],
-          scale: [1, 1.4, 1]
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div 
-        className="absolute top-32 left-1/3 w-3 h-3 bg-yellow-300 rounded-full"
-        animate={{ 
-          opacity: [0.3, 0.8, 0.3],
-          scale: [1, 1.2, 1]
-        }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-      <motion.div 
-        className="absolute bottom-40 right-1/3 w-2 h-2 bg-yellow-500 rounded-full"
-        animate={{ 
-          opacity: [0.5, 1, 0.5],
-          scale: [1, 1.3, 1]
-        }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-      
-      {/* Dreamy planet */}
-      <motion.div 
-        className="absolute top-1/2 left-8 w-14 h-14 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-10"
-        animate={{ 
-          rotate: -360,
-          x: [-5, 15, -5]
-        }}
-        transition={{ 
-          rotate: { duration: 40, repeat: Infinity, ease: "linear" },
-          x: { duration: 12, repeat: Infinity, ease: "easeInOut" }
-        }}
-      />
+      {/* Background planets, clouds, and stars removed */}
 
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
@@ -132,13 +70,8 @@ export function ContactSection() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="relative bg-slate-800/50 backdrop-blur-sm border border-yellow-400/20 p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
-              {/* Decorative corner elements */}
-              <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-yellow-400 rounded-tl-lg"></div>
-              <div className="absolute -top-2 -right-2 w-6 h-6 border-r-2 border-t-2 border-yellow-400 rounded-tr-lg"></div>
-              <div className="absolute -bottom-2 -left-2 w-6 h-6 border-l-2 border-b-2 border-yellow-400 rounded-bl-lg"></div>
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-yellow-400 rounded-br-lg"></div>
-              
+            <div className="relative border border-slate-700 rounded-lg p-8 bg-slate-900/30">
+
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                 <Star className="w-6 h-6 text-yellow-400" />
                 Find Me in the Universe
@@ -174,7 +107,7 @@ export function ContactSection() {
 
             {/* Inspirational quote */}
             <motion.div
-              className="relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-yellow-400/30 p-6 rounded-2xl shadow-xl"
+              className="relative border border-slate-700 rounded-lg p-6 bg-slate-900/30"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
@@ -198,16 +131,8 @@ export function ContactSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative bg-slate-800/50 backdrop-blur-sm border border-yellow-400/20 p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
-              {/* Decorative corner elements for form card */}
-              <div className="absolute -top-2 -left-2 w-8 h-8 border-l-3 border-t-3 border-yellow-400 rounded-tl-xl"></div>
-              <div className="absolute -top-2 -right-2 w-8 h-8 border-r-3 border-t-3 border-yellow-400 rounded-tr-xl"></div>
-              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-l-3 border-b-3 border-yellow-400 rounded-bl-xl"></div>
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-3 border-b-3 border-yellow-400 rounded-br-xl"></div>
-              
-              {/* Inner glow effect */}
-              <div className="absolute inset-2 bg-gradient-to-br from-yellow-400/5 to-amber-400/10 rounded-xl pointer-events-none"></div>
-              
+            <div className="relative border border-slate-700 rounded-lg p-8 bg-slate-900/30">
+
               <div className="relative mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-3">
                   <Send className="w-6 h-6 text-yellow-400" />

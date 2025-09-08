@@ -1,215 +1,86 @@
-"use client";
-
-import { ArrowDown, Send, Sparkles, Star, Rocket } from "lucide-react";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useMemo } from "react";
+import { Github, Linkedin, Twitter, Send, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 export function HomeSection() {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    controls.start({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: "easeOut" }
-    });
-  }, [controls]);
-
-  const floatingElements = useMemo(() => [
-    { 
-      Component: Send, 
-      className: "w-12 h-12 md:w-16 md:h-16 absolute top-20 left-0 text-yellow-400 opacity-70 floating-element", 
-      style: { animationDuration: '25s', animationDelay: '1s' } 
-    },
-    { 
-      Component: Sparkles, 
-      className: "w-8 h-8 md:w-10 md:h-10 absolute top-1/4 right-0 text-yellow-400 floating-element", 
-      style: { animationDuration: '8s', animationDelay: '3s' }
-    },
-    { 
-      Component: Star, 
-      className: "w-6 h-6 md:w-8 md:h-8 absolute top-1/3 left-1/4 text-yellow-400 opacity-60 floating-element" 
-    },
-    { 
-      Component: Star, 
-      className: "w-4 h-4 md:w-6 md:h-6 absolute top-2/3 right-1/3 text-yellow-300 opacity-40 floating-element" 
-    },
-  ], []);
-
-  const planets = useMemo(() => [
-    {
-      className: "absolute top-16 right-16 w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 opacity-30 floating-element",
-      animation: { rotate: 360 },
-      transition: { duration: 20, repeat: Infinity, ease: "linear" }
-    },
-    {
-      className: "absolute bottom-32 left-16 w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-red-400 to-red-600 opacity-25 floating-element",
-      animation: { rotate: -360 },
-      transition: { duration: 25, repeat: Infinity, ease: "linear" }
-    },
-    {
-      className: "absolute top-1/2 right-1/4 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-green-400 to-green-600 opacity-20 floating-element",
-      animation: { rotate: 360 },
-      transition: { duration: 30, repeat: Infinity, ease: "linear" }
-    },
-  ], []);
-
+  const socialLinks = [
+    { href: "https://github.com/ahmed0elseginy", label: "GitHub", Icon: Github },
+    { href: "https://linkedin.com/in/ahmed0elseginy", label: "LinkedIn", Icon: Linkedin },
+    { href: "https://x.com/", label: "X (Twitter)", Icon: Twitter },
+    { href: "https://t.me/", label: "Telegram", Icon: Send },
+  ] as const;
+   
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center text-center text-white">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Flying Elements */}
-        {floatingElements.map((element, index) => {
-          const { Component, className, style } = element;
-          return (
-            <Component 
-              key={index}
-              className={className}
-              style={style}
-            />
-          );
-        })}
+    <section id="home" className="min-h-screen flex items-center justify-center py-24">
+      <div className="mx-auto max-w-6xl px-4 w-full">
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+          {/* Profile Image */}
+          <div className="flex-shrink-0">
+            <div className="relative">
+              <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-primary to-secondary bg-gradient-to-r from-primary/20 to-secondary/20 p-1">
+                <div className="w-full h-full rounded-full overflow-hidden bg-slate-800">
+                  <Image
+                    src="/images/WhatsApp Image 2025-09-08 at 04.31.41_b3b480d2.jpg"
+                    alt="Ahmed El-Seginy - Java Software Developer"
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover scale-110 hover:scale-115 transition-transform duration-500"
+                    priority
+                    quality={100}
+                  />
+                </div>
+              </div>
+              {/* Floating elements around the image */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-secondary rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 -right-8 w-4 h-4 bg-accent rounded-full animate-pulse delay-500"></div>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 text-center lg:text-right space-y-6">
+            <p className="text-gray-300 text-lg font-light tracking-wide">Welcome!...</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-mono">
+              Ahmed El-Seginy
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 font-light">
+              Software Engineer
+            </p>
+            <p className="text-base md:text-lg max-w-2xl mx-auto lg:mx-0 text-gray-300 leading-relaxed font-light">
+              "What makes my code so special is the time I have devoted to perfecting it.
+              <br className="hidden sm:block" />
+              I build scalable systems with Java & Spring Boot..."
+            </p>
+            <div className="pt-4 flex items-center justify-center lg:justify-end gap-4 flex-wrap">
+              {socialLinks.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-12 h-12 inline-flex items-center justify-center border border-slate-700 rounded-full hover:border-primary text-gray-300 hover:text-primary transition-all duration-300 hover:scale-110"
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
         
-        {/* Floating Planets */}
-        {planets.map((planet, index) => (
-          <motion.div 
-            key={index}
-            className={planet.className}
-            animate={planet.animation}
-            transition={planet.transition}
-          />
-        ))}
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="flex flex-col items-center gap-2 text-gray-400">
+            <span className="text-sm font-light tracking-wide">Scroll to explore</span>
+            <a 
+              href="#projects" 
+              className="animate-bounce hover:text-primary transition-colors duration-300"
+              aria-label="Scroll to projects section"
+            >
+              <ChevronDown className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
       </div>
-
-      <motion.div 
-        className="z-10 flex flex-col items-center px-4 max-w-4xl mx-auto"
-        initial={{ opacity: 0, y: 50 }}
-        animate={controls}
-      >
-        <motion.p 
-          className="text-base md:text-lg lg:text-xl text-yellow-400 mb-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          Welcome to my planet...
-        </motion.p>
-        
-        <motion.h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mt-2 mb-4 shiny-text"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.7, duration: 1, type: "spring", stiffness: 100 }}
-        >
-          Ahmed El-Seginy
-        </motion.h1>
-        
-        <motion.div
-          className="flex items-center gap-2 mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
-          <Rocket className="w-5 h-5 md:w-6 md:h-6 text-yellow-400" />
-          <p className="text-base md:text-lg lg:text-2xl story-text">
-            Software Engineer 
-          </p>
-        </motion.div>
-
-        <motion.p 
-          className="text-sm md:text-base lg:text-lg text-gray-400 max-w-2xl leading-relaxed mb-8 px-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-        >
-          "What makes my code so special is the time I have devoted to perfecting it.<br className="hidden sm:block"/>
-          I build scalable backend systems with Java & Spring Boot..."
-        </motion.p>
-
-        <motion.a 
-          href="#projects" 
-          className="absolute bottom-16 md:bottom-10 animate-bounce text-white group"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-        >
-          <p className="text-xs md:text-sm mb-1 group-hover:text-yellow-400 transition-colors">Begin the journey</p>
-          <ArrowDown className="w-6 h-6 md:w-8 md:h-8 mx-auto group-hover:text-yellow-400 transition-colors" />
-        </motion.a>
-      </motion.div>
-
-      {/* Enhanced Planet SVG */}
-      <motion.div 
-        className="absolute bottom-0 left-0 w-full h-1/3 md:h-1/2"
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.3, duration: 1.2, ease: "easeOut" }}
-      >
-        <EnhancedPlanetSvg />
-      </motion.div>
     </section>
   );
 }
-
-const EnhancedPlanetSvg = () => (
-  <svg
-    viewBox="0 0 1440 350"
-    preserveAspectRatio="none"
-    className="absolute bottom-0 left-0 w-full h-full"
-    role="img"
-    aria-label="Planet surface decoration"
-  >
-    <defs>
-      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
-        <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-      <filter id="crater-glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-        <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-      <linearGradient id="planetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#fbbf24" />
-        <stop offset="50%" stopColor="#8b5cf6" />
-        <stop offset="100%" stopColor="#fbbf24" />
-      </linearGradient>
-    </defs>
-    
-    {/* Main planet surface */}
-    <path
-      d="M0,150 C200,250 400,100 720,200 C1040,300 1240,150 1440,250 L1440,350 L0,350 Z"
-      fill="url(#planetGradient)"
-      filter="url(#glow)"
-      className="planet-surface"
-    />
-    
-    {/* Craters with enhanced styling */}
-    <circle cx="200" cy="220" r="30" fill="#8b5cf6" opacity="0.4" filter="url(#crater-glow)" />
-    <circle cx="500" cy="180" r="50" fill="#8b5cf6" opacity="0.4" filter="url(#crater-glow)" />
-    <circle cx="900" cy="250" r="40" fill="#8b5cf6" opacity="0.4" filter="url(#crater-glow)" />
-    <circle cx="1200" cy="230" r="25" fill="#8b5cf6" opacity="0.4" filter="url(#crater-glow)" />
-    
-    {/* Additional surface details */}
-    <circle cx="350" cy="200" r="15" fill="#06b6d4" opacity="0.3" />
-    <circle cx="750" cy="220" r="20" fill="#06b6d4" opacity="0.3" />
-    <circle cx="1050" cy="200" r="18" fill="#06b6d4" opacity="0.3" />
-    
-    {/* Little Prince figure */}
-    <g transform="translate(400, 140)">
-      {/* Body */}
-      <ellipse cx="0" cy="15" rx="8" ry="20" fill="#2563eb" opacity="0.8" />
-      {/* Head */}
-      <circle cx="0" cy="-5" r="12" fill="#fef3c7" opacity="0.9" />
-      {/* Hair */}
-      <path d="M-8,-12 Q0,-18 8,-12" fill="#d97706" opacity="0.8" />
-      {/* Scarf */}
-      <path d="M-10,5 Q0,0 10,5 L8,10 Q0,8 -8,10 Z" fill="#dc2626" opacity="0.9" />
-    </g>
-  </svg>
-);
