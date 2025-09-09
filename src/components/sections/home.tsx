@@ -5,7 +5,7 @@ export function HomeSection() {
   const socialLinks = [
     { href: "https://github.com/ahmed0elseginy", label: "GitHub", Icon: Github },
     { href: "https://linkedin.com/in/ahmed0elseginy", label: "LinkedIn", Icon: Linkedin },
-    { href: "https://x.com/", label: "X (Twitter)", Icon: Twitter },
+    { href: "https://x.com/ahmed0elseginy", label: "X (Twitter)", Icon: Twitter },
     { href: "https://t.me/", label: "Telegram", Icon: Send },
   ] as const;
    
@@ -67,19 +67,6 @@ export function HomeSection() {
           </div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center gap-2 text-gray-400">
-            <span className="text-sm font-light tracking-wide">Scroll to explore</span>
-            <a 
-              href="#projects" 
-              className="animate-bounce hover:text-primary transition-colors duration-300"
-              aria-label="Scroll to projects section"
-            >
-              <ChevronDown className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
