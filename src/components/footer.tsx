@@ -9,13 +9,13 @@ export function Footer() {
   
   const socialLinks = [
     {
-      href: "https://github.com/ahmed-elseginy",
+      href: "https://github.com/ahmed0elseginy",
       label: "GitHub",
       icon: Github,
       color: "hover:text-primary"
     },
     {
-      href: "https://linkedin.com/in/ahmed-elseginy",
+      href: "https://linkedin.com/in/ahmed0elseginy",
       label: "LinkedIn", 
       icon: Linkedin,
       color: "hover:text-secondary"

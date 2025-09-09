@@ -51,9 +51,9 @@ export function AboutSection() {
         {/* Section Header */}
         <motion.div 
           className="text-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -66,9 +66,9 @@ export function AboutSection() {
           {/* About Me Content */}
           <motion.div
             className="space-y-8"
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.05, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             {/* Main Speech Card */}
@@ -117,9 +117,9 @@ export function AboutSection() {
           {/* What I Do Section */}
           <motion.div 
             className="space-y-6"
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -135,9 +135,9 @@ export function AboutSection() {
                 <motion.div
                   key={skill.title}
                   className="bg-black/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden shadow-lg"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  transition={{ delay: index * 0.02, duration: 0.25, ease: "easeOut" }}
                   viewport={{ once: true }}
                 >
                     <button
@@ -154,7 +154,7 @@ export function AboutSection() {
                     </div>
                     <motion.div
                       animate={{ rotate: openSkill === index ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.15, ease: "easeInOut" }}
                     >
                       <ChevronDown className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-primary transition-colors" />
                     </motion.div>
@@ -167,7 +167,11 @@ export function AboutSection() {
                       height: openSkill === index ? "auto" : 0,
                       opacity: openSkill === index ? 1 : 0
                     }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    transition={{ 
+                      duration: 0.2, 
+                      ease: "easeInOut",
+                      opacity: { duration: 0.15 }
+                    }}
                     className="overflow-hidden"
                   >
                     <div className="p-4 md:p-6 pt-0 space-y-2 md:space-y-3">

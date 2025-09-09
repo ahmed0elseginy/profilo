@@ -6,7 +6,7 @@ export function HomeSection() {
     { href: "https://github.com/ahmed0elseginy", label: "GitHub", Icon: Github },
     { href: "https://linkedin.com/in/ahmed0elseginy", label: "LinkedIn", Icon: Linkedin },
     { href: "https://x.com/ahmed0elseginy", label: "X (Twitter)", Icon: Twitter },
-    { href: "https://t.me/", label: "Telegram", Icon: Send },
+    { href: "https://t.me/ahmed0elseginy", label: "Telegram", Icon: Send },
   ] as const;
    
   return (
