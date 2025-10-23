@@ -15,7 +15,7 @@ const projects = [
     description: "Developed a comprehensive monolithic service using Spring Boot (backend) and Next.js with ShadCN UI & Redux (frontend). Secured authentication with AWS Cognito and managed relational data using PostgreSQL.",
     story: "Here I learned that enterprise systems are like complex galaxies - every component must work in perfect harmony.",
     tags: ["Spring Boot", "Next.js", "AWS Cognito", "PostgreSQL", "RabbitMQ", "Redux"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/ahmed0elseginy/luisi-backend",
     liveUrl: "#",
     icon: Globe,
     category: "Full Stack"
@@ -27,7 +27,7 @@ const projects = [
     description: "Designed and developed RESTful APIs with Java Spring Boot, applied Spring Security with ActiveMQ Artemis, and managed relational data using MySQL + Hibernate + Liquibase.",
     story: "Building connections between people taught me that APIs are like bridges between worlds.",
     tags: ["Java", "Spring Boot", "Spring Security", "ActiveMQ", "MySQL", "Hibernate", "Swagger"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/ahmed0elseginy/sm-backend",
     liveUrl: "#",
     icon: Database,
     category: "Backend"
@@ -39,7 +39,7 @@ const projects = [
     description: "Developed full CRUD RESTful endpoints following REST standards. Integrated a message publishing endpoint and followed OpenAPI specifications for API documentation.",
     story: "Managing users taught me that every individual deserves secure and efficient access to digital services.",
     tags: ["Java", "REST API", "OpenAPI", "CRUD", "Message Publishing"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/ahmed0elseginy/user-mgt-antibug-team",
     liveUrl: "#",
     icon: Shield,
     category: "Backend"
@@ -51,23 +51,35 @@ const projects = [
     description: "Implemented essential CRUD operations with a focus on maintainability and code readability. Prioritized clean architecture and modular code for demonstration and testing purposes.",
     story: "Like the Little Prince tending to his rose, I tended to each line of code with care and attention.",
     tags: ["Java", "CRUD", "Clean Architecture", "Modular Design"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/ahmed0elseginy/toda-backend",
     liveUrl: "#",
     icon: Code,
     category: "Backend"
   },
   {
     id: 5,
-    title: "E-commerce Platform",
+    title: "Amazon-El8alaba",
     subtitle: "Shopping Experience",
     description: "Built CRUD functionalities using Spring Boot, MySQL, and Thymeleaf for a dynamic web interface. Focused on creating a seamless shopping experience.",
     story: "Commerce flows like a river - it needs clear channels and secure foundations to reach its destination.",
     tags: ["Spring Boot", "MySQL", "Thymeleaf", "CRUD", "Web Interface"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/ahmed0elseginy/Amazon-El8alaba",
     liveUrl: "#",
     icon: Zap,
     category: "Full Stack"
   },
+  {
+    id: 6,
+    title: "t-tech",
+    subtitle: "Ouer services",
+    description: "Comprehensive technology solutions tailored to your needs.",
+    story: "T-Tech is a modern web application built to showcase and streamline tech services for clients.",
+    tags: ["Next.js", "TypeScript", "ShadCN","Chatbot"],
+    githubUrl: "https://github.com/ahmed0elseginy/t-tech",
+    liveUrl: "https://t-tech-tau.vercel.app/",
+    icon: Zap,
+    category: "frontend"
+  }
 ];
 
 export function ProjectsSection() {
@@ -208,7 +220,7 @@ export function ProjectsSection() {
             className="bg-black/30 border-primary/20 text-gray-300 hover:bg-primary/10 hover:border-primary/40 hover:text-white transition-all duration-300"
             asChild
           >
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/ahmed0elseginy" target="_blank" rel="noopener noreferrer">
               <Github className="w-5 h-5 mr-2" />
               View All Projects on GitHub
             </Link>
