@@ -7,10 +7,12 @@ import { ExperienceSection } from "@/components/sections/experience";
 import { ContactSection } from "@/components/sections/contact";
 import { Footer } from "@/components/footer";
 import { EducationSection } from "@/components/sections/education";
+import { CanvasArt } from "@/components/canvas-art";
 
 export default function Home() {
   return (
     <>
+      <CanvasArt />
       <Header />
       <main>
         <HomeSection />

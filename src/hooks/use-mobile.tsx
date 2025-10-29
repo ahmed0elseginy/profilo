@@ -90,16 +90,17 @@ export function useBreakpoint() {
 
     updateBreakpoint()
     
-    const debouncedUpdate = React.useMemo(() => {
-      let timeoutId: NodeJS.Timeout
-      return () => {
-        clearTimeout(timeoutId)
-        timeoutId = setTimeout(updateBreakpoint, 150)
-      }
-    }, [])
+    let timeoutId: NodeJS.Timeout
+    const debouncedUpdate = () => {
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(updateBreakpoint, 150)
+    }
 
     window.addEventListener('resize', debouncedUpdate)
-    return () => window.removeEventListener('resize', debouncedUpdate)
+    return () => {
+      clearTimeout(timeoutId)
+      window.removeEventListener('resize', debouncedUpdate)
+    }
   }, [])
 
   return breakpoint
@@ -124,16 +125,17 @@ export function useViewportSize() {
 
     updateSize()
     
-    const debouncedUpdate = React.useMemo(() => {
-      let timeoutId: NodeJS.Timeout
-      return () => {
-        clearTimeout(timeoutId)
-        timeoutId = setTimeout(updateSize, 150)
-      }
-    }, [])
+    let timeoutId: NodeJS.Timeout
+    const debouncedUpdate = () => {
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(updateSize, 150)
+    }
 
     window.addEventListener('resize', debouncedUpdate)
-    return () => window.removeEventListener('resize', debouncedUpdate)
+    return () => {
+      clearTimeout(timeoutId)
+      window.removeEventListener('resize', debouncedUpdate)
+    }
   }, [])
 
   return viewportSize
