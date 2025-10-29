@@ -43,7 +43,7 @@ export function HomeSection() {
               Ahmed El-Seginy
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 font-light">
-              Software Engineer
+              Software Engineer <br /> Cairo, Egypt
             </p>
             <p className="text-base md:text-lg max-w-2xl mx-auto lg:mx-0 text-gray-300 leading-relaxed font-light">
               "What makes my code so special is the time I have devoted to perfecting it.

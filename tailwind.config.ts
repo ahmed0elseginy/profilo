@@ -19,6 +19,8 @@ export default {
       fontFamily: {
         body: ['var(--font-sharetech)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
         headline: ['var(--font-orbitron)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        mono: ['var(--font-dm-mono)', 'Input Mono', 'Fira Code', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'Monaco', 'Liberation Mono', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",

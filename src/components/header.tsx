@@ -41,7 +41,7 @@ export function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
     >
-      <nav className="container mx-auto px-4 py-3 flex justify-center items-center">
+      <nav className="container mx-auto px-4 py-3 flex justify-end lg:justify-center items-center">
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-2">
           {navLinks.map((link, index) => {
@@ -80,39 +80,37 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-white hover:text-primary hover:bg-primary/10"
+                className="text-white hover:text-primary hover:bg-primary/10 z-50 h-11 w-11 min-h-[44px] min-w-[44px]"
+                aria-label="Open navigation menu"
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-7 h-7" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] bg-black border-primary/30">
+            <SheetContent side="right" className="w-[55vw] max-w-[260px] sm:w-[260px] bg-black/98 backdrop-blur-md border-primary/30 p-6">
               <SheetHeader>
-                <SheetTitle className="text-primary text-left">Navigation</SheetTitle>
+                <SheetTitle className="text-primary text-left text-xl">Navigation</SheetTitle>
               </SheetHeader>
               
-              <div className="mt-8 space-y-6">
+              <div className="mt-8 space-y-1">
                 {/* Navigation Links */}
-                <div className="space-y-2">
-                  {navLinks.map((link) => {
-                    const Icon = link.icon;
-                    return (
-                      <Button
-                        key={link.href}
-                        asChild
-                        variant="ghost"
-                        className="w-full justify-start text-white hover:text-primary hover:bg-primary/10"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <Link href={link.href} className="flex items-center gap-3">
-                          <Icon className="w-5 h-5" />
-                          {link.label}
-                        </Link>
-                      </Button>
-                    );
-                  })}
-                </div>
-                
+                {navLinks.map((link) => {
+                  const Icon = link.icon;
+                  return (
+                    <Button
+                      key={link.href}
+                      asChild
+                      variant="ghost"
+                      className="w-full justify-start text-white hover:text-primary hover:bg-primary/10 transition-colors h-auto min-h-[48px]"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <Link href={link.href} className="flex items-center gap-4 py-4 px-2 text-base">
+                        <Icon className="w-6 h-6 flex-shrink-0" />
+                        <span className="font-medium">{link.label}</span>
+                      </Link>
+                    </Button>
+                  );
+                })}
               </div>
             </SheetContent>
           </Sheet>

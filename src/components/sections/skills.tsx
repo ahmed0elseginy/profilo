@@ -101,7 +101,7 @@ export function SkillsSection() {
                 value="devops"
                 className="text-gray-200 font-medium data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-primary/20 hover:text-white hover:bg-primary/10 transition-all duration-300"
               >
-                Cloud & DevOps
+                DevOps
               </TabsTrigger>
             </TabsList>
 

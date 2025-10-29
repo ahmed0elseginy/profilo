@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import { Orbitron, Share_Tech_Mono } from 'next/font/google';
+import { Orbitron, Share_Tech_Mono, Inter, DM_Mono } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster";
 
 const orbitron = Orbitron({
@@ -15,6 +15,21 @@ const shareTechMono = Share_Tech_Mono({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-sharetech',
+  display: 'swap',
+  preload: true,
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  preload: true,
+});
+
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-dm-mono',
   display: 'swap',
   preload: true,
 });
@@ -45,7 +60,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
-      <body className={`${orbitron.variable} ${shareTechMono.variable} font-body antialiased`}> 
+      <body className={`${inter.variable} ${dmMono.variable} ${orbitron.variable} ${shareTechMono.variable} font-sans text-gray-700 dark:text-gray-200 relative antialiased`}> 
           {children}
           <Toaster />
       </body>
