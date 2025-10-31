@@ -35,11 +35,11 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Ahmed Elseginy | Software Developer',
-  description: 'Portfolio of Ahmed Elseginy, a passionate software developer specializing in creating modern web applications.',
+  title: 'Ahmed El-Seginy | Software Developer',
+  description: 'Portfolio of Ahmed El-Seginy, a passionate software developer specializing in creating modern web applications.',
   robots: 'index, follow',
-  authors: [{ name: 'Ahmed Elseginy' }],
-  keywords: ['Ahmed Elseginy', 'Software Developer', 'Backend Developer', 'Portfolio'],
+  authors: [{ name: 'Ahmed El-Seginy' }],
+  keywords: ['Ahmed El-Seginy', 'Software Developer', 'Backend Developer', 'Portfolio'],
 };
 
 export const viewport: Viewport = {
